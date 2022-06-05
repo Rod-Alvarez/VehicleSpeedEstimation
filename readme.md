@@ -83,6 +83,14 @@ detector module that uses these libraries:
 - yolo_cpp.dll
 - zlibwapi.dll (from Nvidia)
 
+Running yolo darknet also requires a few dependency files on top of the dll. These files are more towards running
+the model itself (Yolo in this case) then with installing darknet. You will need to make sure the following 
+files are in the detector folder.
+- coco.data
+- coco.names (with path specified from coco.data)
+- yolov3.cfg
+- yolov3.weights
+
 It is important to note that my GPU does not have any tensor cores which makes it unavailable to run yolo
 in fp16. As such, I had to reduce the resolution of the input (256x256) to compensate and trade-off a bit of 
 accuracy for speed to comply with the model performance criteria.
